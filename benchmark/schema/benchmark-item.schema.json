@@ -1,0 +1,90 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Southern Benchmark Item",
+  "type": "object",
+  "required": [
+    "id",
+    "category",
+    "prompt",
+    "evaluation_type",
+    "provenance",
+    "licence",
+    "review_status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^SOUTHERN-[A-Z]+-[0-9]{4}$"
+    },
+    "category": {
+      "type": "string"
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reference_answer": {
+      "type": ["string", "null"]
+    },
+    "evaluation_type": {
+      "type": "string",
+      "enum": [
+        "exact_match",
+        "multiple_choice",
+        "rubric",
+        "code_test",
+        "human_review"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_type", "created_by"],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "original",
+            "public_source",
+            "synthetic",
+            "community_contribution"
+          ]
+        },
+        "source_reference": {
+          "type": ["string", "null"]
+        },
+        "created_by": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "licence": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "cultural_sensitivity": {
+      "type": "string",
+      "enum": ["none", "review_required", "restricted"]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "reviewed", "approved", "rejected"]
+    },
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
