@@ -1,0 +1,19 @@
+﻿{
+  "id": "SOUTHERN-AUS-0001",
+  "category": "australian-knowledge",
+  "subcategory": "geography",
+  "prompt": "What is the capital city of Queensland?",
+  "reference_answer": "Brisbane",
+  "evaluation_type": "exact_match",
+  "provenance": {
+    "source_type": "original",
+    "source_reference": null,
+    "created_by": "Southern",
+    "created_at": "2026-08-02"
+  },
+  "licence": "CC-BY-4.0",
+  "risk_level": "low",
+  "cultural_sensitivity": "none",
+  "review_status": "draft",
+  "reviewers": []
+}
